@@ -1,0 +1,25 @@
+{
+  "name": "really-simple-otp-input",
+  "main": "OtpInput.js",
+  "version": "1.0.0",
+  "description": "A simple component for collecting One Time Passcodes from users in React Native Apps",
+
+  "peerDependencies": {
+    "react-native": ">=0.20.0"
+  },
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "otp",
+    "one-time-passcode",
+    "react-native-otp-input",
+    "react-native-otp",
+    "component",
+    "react-native-component"
+  ],
+  "author": "Tom Easterbrook",
+  "license": "MIT"
+}
