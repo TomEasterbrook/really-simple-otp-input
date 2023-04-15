@@ -8,14 +8,12 @@ const setInitialCode = (numberOfDigits,value) => {
     }
     return code
 }
-const OtpInput = ({value = [],numberOfDigits = 4, onValueChanged=()=>{},onAutofill=()=>{},onNewCodeRequested = ()=>{},containerStyle = {},headerTextStyle = {},digitInputStyle = {}, codeResendEnabledStyle = {},codeResendDisabledStyle: codeResendDisabledStyle = {}, hideCode = false, headerText = "Enter your One Time Passcode"}) => {
+const OtpInput = ({value = [],numberOfDigits = 6,resendTimerLength = 30, onValueChanged=()=>{},onAutofill=()=>{},onNewCodeRequested = ()=>{},containerStyle = {},headerTextStyle = {},digitInputStyle = {}, codeResendEnabledStyle = {},codeResendDisabledStyle: codeResendDisabledStyle = {}, hideCode = false, headerText = "Enter your One Time Passcode"}) => {
     const [code,setCode] = useState(setInitialCode(numberOfDigits,value))
-    const [newCodeTimer,setNewCodeTimer] = useState(30)
+    const [newCodeTimer,setNewCodeTimer] = useState(resendTimerLength)
     const refs = useRef([])
 
     let newCodeButtonEnabled = newCodeTimer === 0;
-
-
 
     useEffect(()=>{
         onValueChanged(code)
@@ -118,7 +116,7 @@ const OtpInput = ({value = [],numberOfDigits = 4, onValueChanged=()=>{},onAutofi
             <View>
                 <TouchableOpacity disabled={!newCodeButtonEnabled} onPress={()=> {
                     onNewCodeRequested()
-                    setNewCodeTimer(30)
+                    setNewCodeTimer(resendTimerLength)
 
                 }
                 }>

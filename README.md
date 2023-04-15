@@ -10,13 +10,32 @@ Yarn: yarn add react-native-really-simple-otp-input
 ## Usage
 ```
 import OTPInput from 'react-native-really-simple-otp-input';
-
+OtpInput value={code}
+         onValueChanged={(value)=> {
+                     setCode(value)
+                 }}
+         onAutofill={()=>setOtpAutofilled(true)}
+         onNewCodeRequested={resendCode}/>
 
 ```
+![A screenshot of the component](https://i.imgur.com/69rvScb.png)
 ## Props
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| value | string | '' | The value of the input |
+| Prop | Type | Default | Description                                                                          |
+| --- | --- | --- |--------------------------------------------------------------------------------------|
+| value | Array | [] | The value of the OTP input. This should be an array of strings. One string per digit |
+| numberOfDigits | Number | 6 | The number of digits that make up the code                                           |
+| resendTimerLength | Number | 30 | The length of time in seconds that the resend button is disabled for                 |
+| onValueChanged | Function | () => {} | A function that is called when the value of the input changes. The value is passed as a parameter |
+| onAutofill | Function | () => {} | A function that is called when the code is autofilled by the OS. This is useful if you want to do something when the code is autofilled |
+| onNewCodeRequested | Function | () => {} | A function that is called when the user taps the resend button. This is useful if you want to do something when the user requests a new code |
+| containerStyle | Object | {} | A style object that is applied to the container of the component |
+| headerTextStyle | Object | {} | A style object that is applied to the header text of the component |
+| digitInputStyle | Object | {} | A style object that is applied to the input for each digit |
+| codeResendEnabledStyle | Object | {} | A style object that is applied to the resend button when it is enabled |
+| codeResendDisabledStyle | Object | {} | A style object that is applied to the resend button when it is disabled |
+| hideCode | Boolean | false | A boolean that determines whether the code is hidden or not. If true the code will be hidden with dots |
+| headerText | String | "Enter your One Time Passcode" | The text that is displayed above the input |
+
 
 ## License
 MIT License - Feel free to use this in any project you like.
