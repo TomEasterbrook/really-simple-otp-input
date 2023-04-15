@@ -45,3 +45,11 @@ As this is my first React Native component I would love to hear any suggestions 
 
 ## Credits
 This project was inspired by [react-native-otp-input](https://github.com/naveenvignesh5/react-native-otp-textinput) 
+
+## Buy me a Hot Chocolate
+If you like this component and want to buy me a hot chocolate you can do so here: 
+
+[!["Buy Me A C"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/wheelie)
+
+
+
